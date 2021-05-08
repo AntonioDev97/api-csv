@@ -12,6 +12,6 @@ DBInstance.sync().then(() => {
         console.log(`Server running on port ${Port}`);
     });
 }).catch(error => {
-    Logger.error('Database not ', error);
+    Logger.error('Database not initialized', error);
     console.error('Database not initialized', error);
 });
