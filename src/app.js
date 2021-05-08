@@ -2,8 +2,8 @@ const express = require('express');
 const helment = require('helmet');
 const cors = require('cors');
 
-const server = express();
-const corsConfig = {
+const Server = express();
+const CorsConfig = {
     origin: "*",
     methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE", "PATCH"],
     allowHeaders: [
@@ -16,9 +16,9 @@ const corsConfig = {
     ]
 }
 
-server.use(express.json());
-server.use(express.urlencoded({ extended: false }));
-server.use(cors(corsConfig));
-server.use(helment());
+Server.use(express.json());
+Server.use(express.urlencoded({ extended: false }));
+Server.use(cors(CorsConfig));
+Server.use(helment());
 
-module.exports = server;
+module.exports = Server;

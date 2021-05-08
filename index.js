@@ -1,8 +1,13 @@
 const dotenv = require('dotenv').config();
-const server = require('./src/app');
+const Server = require('./src/app');
+const DBInstance = require('./src/services/sequelize.service');
 
-const port = process.env.PORT || 4000;
+const Port = process.env.PORT || 4000;
 
-server.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+DBInstance.sync().then(() => {
+    Server.listen(Port, () => {
+        console.log(`Server running on port ${Port}`);
+    });
+}).catch(error => {
+    console.error('Database not initialized', error);
 });
