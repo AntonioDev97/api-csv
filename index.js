@@ -1,6 +1,6 @@
 const dotenv = require('dotenv').config();
 const Server = require('./src/app');
-const DBInstance = require('./src/services/sequelize.service');
+const { DBInstance } = require('./src/services/sequelize.service');
 const Logger = require('./src/services/winston.service');
 
 const Port = process.env.PORT || 4000;

@@ -1,4 +1,6 @@
 const { Sequelize } = require("sequelize");
+const V1Data = require("../v1/models/data.model");
+const V1Provider = require("../v1/models/provider.model");
 
 const _Host = process.env.DB_HOST;
 const _Port = process.env.DB_PORT;
@@ -23,4 +25,14 @@ const DBInstance = new Sequelize({
     }
 });
 
-module.exports = DBInstance;
+const Data = V1Data(DBInstance);
+const Provider = V1Provider(DBInstance);
+Data.belongsTo(Provider, { foreignKey: 'provider_id' });
+Provider.hasMany(Data, { foreignKey: 'provider_id' });
+
+const Models = {
+    Data,
+    Provider
+}
+
+module.exports = { DBInstance, Models };
