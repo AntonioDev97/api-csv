@@ -1,0 +1,19 @@
+{
+  "name": "api-csv",
+  "version": "1.0.0",
+  "description": "API to manage CSV files storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioDev97/api-csv.git"
+  },
+  "author": "Juan Antonio Olvera Cruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonioDev97/api-csv/issues"
+  },
+  "homepage": "https://github.com/AntonioDev97/api-csv#readme"
+}
