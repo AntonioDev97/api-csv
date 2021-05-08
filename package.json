@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/AntonioDev97/api-csv#readme",
   "dependencies": {
+    "convert-csv-to-json": "^1.3.0",
     "cors": "^2.8.5",
     "csv-parse": "^4.15.4",
     "dotenv": "^9.0.0",
